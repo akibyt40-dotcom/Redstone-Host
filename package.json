@@ -1,3 +1,4 @@
+
 {
   "name": "redstone-host",
   "version": "1.0.0",
@@ -8,10 +9,11 @@
     "start": "node server.js",
     "dev": "node --watch server.js"
   },
-  "engines": { "node": ">=26" },
-  "dependencies": {"better-sqlite3": "^11.10.0"
-    "bcryptjs": "^2.4.3",
-    "better-sqlite3": "^11.8.1",
+  "engines": {
+    "node": "26.x"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.2.0",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "express-rate-limit": "^7.5.0",
