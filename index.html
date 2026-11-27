@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Redstone Host</title><link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div id="toast" class="toast"></div>
+<section id="authView" class="auth-shell">
+  <div class="auth-art"><div class="redstone-mark"></div><h1>REDSTONE <b>HOST</b></h1><p>POWER YOUR MINECRAFT WORLD</p></div>
+  <form id="loginForm" class="auth-card">
+    <h2>Welcome back</h2><p class="muted">Sign in to continue to your account</p>
+    <label>Email or Username</label><input id="identity" autocomplete="username" placeholder="Enter your Email or Username" required>
+    <label>Password</label><input id="password" type="password" autocomplete="current-password" placeholder="Enter your password" required>
+    <button id="loginBtn" class="btn primary" type="submit" disabled>LOGIN</button>
+    <div class="or"><span>OR</span></div>
+    <button type="button" class="btn social" id="discordBtn">◉ Sign in with Discord</button>
+    <p class="muted small">New here? <a href="#" id="showRegister">Create an account</a></p>
+    <p class="muted tiny">Discord sign-in requires OAuth credentials and callback setup by the site owner.</p>
+  </form>
+  <form id="registerForm" class="auth-card hidden">
+    <h2>Create account</h2><p class="muted">Register for Redstone Host</p>
+    <label>Username</label><input id="regUsername" placeholder="Choose a username" required>
+    <label>Email</label><input id="regEmail" type="email" placeholder="Enter your email" required>
+    <label>Password</label><input id="regPassword" type="password" placeholder="At least 10 characters" required>
+    <button class="btn primary" type="submit">CREATE ACCOUNT</button>
+    <p class="muted small">Already registered? <a href="#" id="showLogin">Sign in</a></p>
+  </form>
+</section>
+
+<section id="appView" class="app hidden">
+  <aside class="sidebar">
+    <div class="brand"><div class="redstone-mark smallmark"></div><span>REDSTONE<br><b>HOST</b></span></div>
+    <nav>
+      <button data-page="dashboard" class="nav active"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg></span><span>Dashboard</span></button>
+      <button data-page="servers" class="nav"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01M11 7.5h6M11 16.5h6"/></svg></span><span>My Servers</span></button>
+      <button data-page="plans" class="nav"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5zM3 12l9 5 9-5M3 16l9 5 9-5"/></svg></span><span>Plans</span></button>
+      <button data-page="billing" class="nav"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg></span><span>Billing</span></button>
+      <button data-page="tickets" class="nav"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM4 7l8 6 8-6"/></svg></span><span>Tickets</span></button>
+      <button data-page="support" class="nav"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M4 13v-2a8 8 0 0 1 16 0v2M4 13H3v4h4v-4H4zm16 0h1v4h-4v-4h3zM17 20h-5"/></svg></span><span>Support</span></button>
+      <button data-page="settings" class="nav"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/><path d="m19 13 2-1-2-1-.6-2 1-2-2-2-2 1-2-.6-1-2-1 2-2 .6-2-1-2 2 1 2-.6 2-2 1 2 1 .6 2-1 2 2 2 2-1 2 .6 1 2 1-2 2-.6 2 1 2-2-1-2z"/></svg></span><span>Settings</span></button>
+      <button data-page="admin" id="adminNav" class="nav hidden"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM8 8h8M8 12h8M8 16h5"/></svg></span><span>Orders</span></button>
+      <button data-page="admins" id="adminsNav" class="nav hidden"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/><path d="m19.4 15 .1.1 1.2.9-1.2 2.1-1.4-.6a8 8 0 0 1-1.5.9l-.2 1.6h-2.4l-.2-1.6a8 8 0 0 1-1.5-.9l-1.4.6-1.2-2.1 1.2-.9a7 7 0 0 1 0-1.8l-1.2-.9 1.2-2.1 1.4.6a8 8 0 0 1 1.5-.9l.2-1.6h2.4l.2 1.6a8 8 0 0 1 1.5.9l1.4-.6 1.2 2.1-1.2.9a7 7 0 0 1 0 1.8Z"/></svg></span><span>Admins</span></button>
+    </nav>
+    <button id="logoutBtn" class="btn logout">↪ Logout</button>
+  </aside>
+  <main class="main">
+    <header class="topbar"><span class="mobile-brand">🔴 REDSTONE HOST</span><span id="userTag">Account</span></header>
+    <div id="pageContent" class="content"></div>
+  </main>
+</section>
+<script src="/app.js"></script>
+</body></html>
